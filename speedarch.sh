@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="192.168.2.101/speedarch"
+SERVER="/master"
 
 # when you edit file in remote repository you must update you tar.gz on remote server: bash save.sh
 
@@ -18,5 +18,5 @@ cd speedarch
 SERVER="SERVER"
 IP="$(ip addr show |grep "inet " |grep -v 127.0.0. |head -1|cut -d" " -f6|cut -d/ -f1)"
 SERVER=${SERVER//\//\\/}
-find ./ -type f -exec sed -i -e "s/$SERVER/$IP\/speedarch/g" {} \;
+find ./ -type f -exec sed -i -e "s/$SERVER/http:\/\/$IP\/speedarch/g" {} \;
 cat speedarch.sh

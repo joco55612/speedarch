@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="192.168.2.101/speedarch"
+SERVER="/master"
 
 sudo pacman -S firefox --noconfirm --needed
 source <(curl -s $SERVER/cups.sh)

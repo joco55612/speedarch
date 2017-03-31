@@ -3,7 +3,7 @@
 	systemd-boot, lvm, arch, i3, gvim, samba, cups, apache...
 
 # Server
-	SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
+	SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 
 	# Optional - personal server (script & pkg) if you already run arch
 	curl -O $SERVER/speedarch.sh
@@ -12,7 +12,7 @@
 	SERVER="192.168.2.101/speedarch"
 
 # New machine (boot in efi the fresh arch iso)
-	curl -O https://$SERVER/arch.sh
+	curl -O $SERVER/arch.sh
 	nano arch.sh
 	bash arch.sh
 
@@ -36,6 +36,10 @@
 
 	You can also create your own fork
 	GPLv3
+
+	cd /srv/http/speedarch
+	nano publish.sh
+	bash publish.sh
 
 # Todo list
 	keyboard ca-fr

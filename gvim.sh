@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="192.168.2.101/speedarch"
+SERVER="/master"
 
 sudo pacman -S gvim --noconfirm --needed
 

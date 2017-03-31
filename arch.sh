@@ -11,8 +11,8 @@ DRIVE="/dev/sda"
 BOOT="/dev/sda1"
 ROOT="/dev/sda2"
 
-SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
-sed -i "1 i\Server = http://$SERVER\/pkg" /etc/pacman.d/mirrorlist
+SERVER="/master"
+sed -i "1 i\Server = $SERVER\/pkg" /etc/pacman.d/mirrorlist
 
 ls /sys/firmware/efi/efivars
 dd if=/dev/zero of=$DRIVE bs=4096 count=35
