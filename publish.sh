@@ -6,8 +6,8 @@ git config --global user.name "joco55612"
 
 cd /tmp/speedarchGit
 git pull
-
 cp /srv/http/speedarch/* /tmp/speedarchGit
+ln -s /var/cache/pacman/pkg pkg
 IP="$(ip addr show |grep "inet " |grep -v 127.0.0. |head -1|cut -d" " -f6|cut -d/ -f1)"
 SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
 SERVER=${SERVER//\//\\/}
