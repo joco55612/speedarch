@@ -6,7 +6,7 @@
 USERNAME="joco55612"
 
 YOUR_REPOSITORY="https://github.com/$USERNAME/speedarch.git"
-YOUR_RAW="https://raw.githubusercontent.com/$USERNAME/speedarch/master/"
+YOUR_RAW="https://raw.githubusercontent.com/$USERNAME/speedarch/master"
 
 git config --global user.email "joco55612@gmail.com"
 git config --global user.name "joco55612"

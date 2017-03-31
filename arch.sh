@@ -11,7 +11,7 @@ DRIVE="/dev/sda"
 BOOT="/dev/sda1"
 ROOT="/dev/sda2"
 
-SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master/"
+SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 sed -i "1 i\Server = $SERVER\/pkg" /etc/pacman.d/mirrorlist
 
 ls /sys/firmware/efi/efivars
