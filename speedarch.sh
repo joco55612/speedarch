@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="https://github.com/joco55612/speedarch/master"
+SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master/"
 
 # when you edit file in remote repository you must update you tar.gz on remote server: bash save.sh
 
