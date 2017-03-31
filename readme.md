@@ -3,22 +3,21 @@
 	systemd-boot, lvm, arch, i3, gvim, samba, cups, apache...
 
 # Server
-	SERVER="raw.githubusercontent.com/joco55612/speedarch/master/"
+	SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
 
 	# Optional - personal server (script & pkg) if you already run arch
 	curl -O $SERVER/speedarch.sh
 	nano speedarch.sh
 	bash speedarch.sh
-	SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
-	# Optional
+	SERVER="192.168.2.101/speedarch"
 
 # New machine (boot in efi the fresh arch iso)
-	curl -O $SERVER/arch.sh
+	curl -O https://$SERVER/arch.sh
 	nano arch.sh
 	bash arch.sh
 
 # Graphical user interface
-	curl -O $SERVER/speedarch.sh
+	curl -O $SERVER/i3.sh
 	nano i3.sh
 	bash i3.sh
 	reboot

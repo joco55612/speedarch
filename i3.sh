@@ -4,7 +4,7 @@
 
 # TODO : grep interface name and modify bar.py
 
-SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
+SERVER="192.168.2.101/speedarch"
 
 sudo pacman -S xorg-server xorg-xinit xorg-server-utils xorg-apps --noconfirm --needed
 

@@ -2,7 +2,6 @@
 
 # doc: https://google.com/ search arch+COMMAND
 
-SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
 HOST="host"
 USER="user"
 USERPASS="a"
@@ -11,6 +10,9 @@ ROOTPASS="a"
 DRIVE="/dev/sda"
 BOOT="/dev/sda1"
 ROOT="/dev/sda2"
+
+SERVER="raw.githubusercontent.com/joco55612/speedarch/master"
+sed -i "1 i\Server = http://$SERVER\/pkg" /etc/pacman.d/mirrorlist
 
 ls /sys/firmware/efi/efivars
 dd if=/dev/zero of=$DRIVE bs=4096 count=35
@@ -44,7 +46,7 @@ mount /dev/volgroup0/lv_root /mnt
 mkdir /mnt/boot
 mount "$BOOT" /mnt/boot
 
-sed -i "1 i\Server = $SERVER\/pkg" /etc/pacman.d/mirrorlist
+
 (echo  #select all package from base
 echo  # to install all
 echo  Y)| pacstrap -i /mnt base base-devel
