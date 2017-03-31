@@ -1,0 +1,73 @@
+# Mod4 is the super key (key with the windows icon on it)
+set $mod Mod4
+
+bindsym $mod+z exec --no-startup-id urxvt
+bindsym $mod+a exec --no-startup-id firefox
+bindsym $mod+x kill
+bindsym $mod+p exec systemctl poweroff
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# inverse windows position
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+bindsym $mod+s fullscreen starcked
+bindsym $mod+f fullscreen toggle
+bindsym $mod+d layout toggle split
+bindsym $mod+g layout tabbed
+
+workspace_layout tabbed
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# reload the configuration
+# watch compton may use 100% cpu
+bindsym $mod+Shift+e restart
+
+font xft:Inconsolata 16
+
+bar {
+	status_command    python ~/.config/i3/bar.py
+        font pango:DejaVu Sans Mono, FontAwesome 14
+	position          top
+        workspace_buttons yes
+}
+#large border
+new_window normal 5
+new_float normal 5
+
+# move to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+# switch workspace position
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+#pacman -S compton
+#transparent bg
+exec_always compton
+
+#nvidia fix
+force_xinerama yes
