@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
+SERVER="http://192.168.2.110/speedarch"
 
 sudo pacman -S gvim --noconfirm --needed
 

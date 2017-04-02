@@ -22,5 +22,6 @@ YOUR_RAW=${YOUR_RAW//\//\\/}
 find . -type f -exec sed -i -e "s/http:\/\/$IP\/speedarch/$YOUR_RAW/g" {} \;
 
 git add .
-git commit -m "."
+echo "Your commit message" && read MESSAGE
+git commit -m "$MESSAGE"
 git push --set-upstream origin master
