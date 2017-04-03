@@ -10,13 +10,15 @@ YOUR_RAW="https://raw.githubusercontent.com/$USERNAME/speedarch/master"
 
 git config --global user.email "joco55612@gmail.com"
 git config --global user.name "joco55612"
-git clone $YOUR_REPOSITORY /tmp/speedarchGit
 
-cd /tmp/speedarchGit
-git pull
+cd /tmp/
+git clone $YOUR_REPOSITORY /tmp/speedarch
+mv speedarch/.git .
+rm -rf speedarch
+cp -r /srv/http/speedarch /tmp/
+mv .git speedarch/
 
-cp /srv/http/speedarch/* /tmp/speedarchGit
-ln -s /var/cache/pacman/pkg pkg
+cd speedarch
 IP="$(ip addr show |grep "inet " |grep -v 127.0.0. |head -1|cut -d" " -f6|cut -d/ -f1)"
 YOUR_RAW=${YOUR_RAW//\//\\/}
 find . -type f -exec sed -i -e "s/http:\/\/$IP\/speedarch/$YOUR_RAW/g" {} \;
@@ -25,3 +27,4 @@ git add .
 echo "Your commit message" && read MESSAGE
 git commit -m "$MESSAGE"
 git push --set-upstream origin master
+rm -rf /tmp/speedarch

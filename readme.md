@@ -40,8 +40,9 @@
 	bash softwares.sh
 
 # Graphical Workaround
-	cups by firefox
 	firefox configuration
+	cups by firefox
+	inkscape use all cpu
 
 # Todo list
 	keyboard ca-fr
