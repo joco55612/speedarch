@@ -1,11 +1,11 @@
 #!/bin/bash
 
-SERVER="http://192.168.2.110/speedarch"
+SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 
 sudo pacman -S firefox --noconfirm --needed
 source <(curl -s $SERVER/cups.sh)
 
-sudo pacman -S libreoffice inkscape gimp blender atom pcmanfm mpv youtube-dl qbittorrent keepass mc openssh pigz --noconfirm --needed
+sudo pacman -S libreoffice inkscape gimp blender atom pcmanfm mpv youtube-dl qbittorrent keepass mc openssh pigz rsync --noconfirm --needed
 
 source <(curl -s $SERVER/atom.sh)
 source <(curl -s $SERVER/gvim.sh)

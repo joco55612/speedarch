@@ -1,11 +1,11 @@
 #!/bin/bash
 
-SERVER="http://192.168.2.110/speedarch"
+SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 
 sudo pacman -S gvim --noconfirm --needed
 
 cd
-curl -O $SERVER/speedarch/vimrc
+curl -O $SERVER/speedarch/dotfiles/vimrc
 mv vimrc .vimrc
 source .vimrc
 sudo cp .vimrc /root/.vimrc

@@ -4,7 +4,7 @@
 
 # TODO : grep interface name and modify bar.py
 
-SERVER="http://192.168.2.110/speedarch"
+SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 
 sudo pacman -S xorg-server xorg-xinit xorg-server-utils xorg-apps --noconfirm --needed
 
@@ -24,23 +24,23 @@ cd
 rm -rf .xinitrc
 head -n -6 /etc/X11/xinit/xinitrc >> .xinitrc
 echo "exec i3" >> .xinitrc
-curl -O $SERVER/Xresources
+curl -O $SERVER/dotfiles/Xresources
 mv Xresources .Xresources
 
 mkdir .config
 cd .config
 mkdir i3
 cd i3
+curl -O $SERVER/dotfiles/bar.py
+curl -O $SERVER/dotfiles/config
 git clone https://aur.archlinux.org/ttf-font-awesome.git
 cd ttf-font-awesome
 echo "Y" | makepkg -si
-curl -O $SERVER/bar.py
-curl -O $SERVER/config
-tac config
 cd
-curl -O $SERVER/bash_profile
-#curl -O $SERVER/ca-fr.conf
-#sudo cp ca-fr.conf /etc/X11/xorg.conf.d/
+curl -O $SERVER/dotfiles/bash_profile
+#curl -O $SERVER/dotfiles/keyboard.conf
+#sudo cp keyboard.conf /etc/X11/xorg.conf.d/
+tac /home/$USER/.config/i3/config
 cat << Instruction
 -- reboot --
 startx #to test i3

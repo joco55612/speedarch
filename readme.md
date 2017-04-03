@@ -13,7 +13,7 @@
 	curl -O $SERVER/speedarch.sh
 	nano speedarch.sh
 	bash speedarch.sh
-	SERVER="192.168.2.101/speedarch"
+	SERVER="192.168.2.101/speedarch"    # your personal ip
 
 	# Optional - You can also create your own fork (GPLv3)
 	 cd /srv/http/speedarch
