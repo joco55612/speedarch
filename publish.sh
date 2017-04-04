@@ -22,7 +22,9 @@ cd speedarch
 IP="$(ip addr show |grep "inet " |grep -v 127.0.0. |head -1|cut -d" " -f6|cut -d/ -f1)"
 YOUR_RAW=${YOUR_RAW//\//\\/}
 find . -type f -exec sed -i -e "s/http:\/\/$IP\/speedarch/$YOUR_RAW/g" {} \;
+source save.sh
 
+cd /tmp/speedarch/
 git add .
 echo "Your commit message" && read MESSAGE
 git commit -m "$MESSAGE"

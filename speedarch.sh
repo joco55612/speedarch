@@ -7,7 +7,8 @@ SERVER="https://raw.githubusercontent.com/joco55612/speedarch/master"
 sudo pacman -S apache --noconfirm --needed
 sudo systemctl start httpd
 sudo systemctl enable httpd
-sudo chmod 777 /srv/http/
+sudo chmod 755 /srv/http/
+sudo chown $USER:$USER -R /srv/http
 
 cd /srv/http/
 curl -O $SERVER/speedarch.tar.gz  ########################
