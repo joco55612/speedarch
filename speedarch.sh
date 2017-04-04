@@ -21,3 +21,5 @@ IP="$(ip addr show |grep "inet " |grep -v 127.0.0. |head -1|cut -d" " -f6|cut -d
 SERVER=${SERVER//\//\\/}
 find ./ -type f -exec sed -i -e "s/$SERVER/http:\/\/$IP\/speedarch/g" {} \;
 cat speedarch.sh
+
+source save.sh
